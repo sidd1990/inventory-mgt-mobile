@@ -9,7 +9,7 @@ class LoginForm extends Component {
 					<Input label="Email" placeholder="email@gmail.com"/>
 				</CardSection>
 				<CardSection>
-					<Input label="Password" placeholder="password"/>
+					<Input label="Password" placeholder="password" secureTextEntry/>
 				</CardSection>
 				<CardSection>
 					<Button>Login</Button>
