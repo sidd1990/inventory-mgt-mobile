@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
-import {Provider} from 'react-native';
-import {createStore} from 'react-redux';
-import reducers from 'redux';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import reducers from './src/reducers';
 import LoginForm from './src/components/LoginForm';
 
 class App extends Component {
@@ -14,4 +13,5 @@ class App extends Component {
 		);
 	}
 }
+
 export default App;
