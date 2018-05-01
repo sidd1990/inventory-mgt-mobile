@@ -9,7 +9,7 @@ const RouterComponent = () => {
 			<Scene key="root">
 				<Scene key="login" component={LoginForm} title="Login" initial/>
 				<Scene
-					key="facilitiesList"
+					key="facilityList"
 					component={FacilitiesList}
 					title="Facilities"
 				/>
