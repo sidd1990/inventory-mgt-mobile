@@ -40,4 +40,14 @@ class LoginForm extends Component {
 	}
 }
 
-export default LoginForm;
+const mapStateToProps = state => {
+	const {email, password} = state.auth;
+	return {
+		email: email,
+		password: password
+	};
+};
+
+export default connect(mapStateToProps, {emailChanged, passwordChanged})(
+	LoginForm
+);
