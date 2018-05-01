@@ -22,6 +22,20 @@ export const passwordChanged = text => {
 	};
 };
 
+const loginUserSuccess = (dispatch, data) => {
+	dispatch({
+		type: LOGIN_USER_SUCCESS,
+		payload: data
+	});
+	Actions.facilityList();
+};
+
+const loginUserFail = dispatch => {
+	dispatch({
+		type: LOGIN_USER_FAIL
+	});
+};
+
 export const loginUser = ({email, password}) => {
 	return dispatch => {
 		dispatch({
@@ -35,11 +49,10 @@ export const loginUser = ({email, password}) => {
 		axios
 			.get('https://api.jikan.me/anime/1')
 			.then(data => {
-				dispatch({type: LOGIN_USER_SUCCESS, payload: data});
-				Actions.facilitiesList();
+				loginUserSuccess(dispatch, data);
 			})
 			.catch(() => {
-				dispatch({type: LOGIN_USER_FAIL});
+				loginUserFail(dispatch);
 			});
 	};
 };
