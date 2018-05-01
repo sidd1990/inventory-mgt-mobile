@@ -36,22 +36,28 @@ const loginUserFail = dispatch => {
 	});
 };
 
+/**
+ * * Attempts to login a user
+ * @param {email} Email Required to log user in
+ * @param {password} Password Required to log user in
+ * @returns{null} Null
+ */
 export const loginUser = ({email, password}) => {
 	return dispatch => {
 		dispatch({
 			type: LOGIN_USER
 		});
-		// TODO Fetch User From API
 		console.log('email and password: ' + email + ' ' + password);
-		// TODO Use dispatch in 'then' of axios.post
-		// TODO axios.post('url').then((user) => {FILL DISPATCH HERE})
-		// TODO dispatch(type: LOGIN_USER_SUCCESS, payload: user)
 		axios
-			.get('https://api.jikan.me/anime/1')
-			.then(data => {
-				loginUserSuccess(dispatch, data);
+			.post('http://ims-5320.us-east-2.elasticbeanstalk.com/api/values/Login', {
+				Username: email,
+				Password: password
 			})
-			.catch(() => {
+			.then(data => {
+				loginUserSuccess(dispatch, data.data);
+			})
+			.catch(error => {
+				console.log(error);
 				loginUserFail(dispatch);
 			});
 	};
