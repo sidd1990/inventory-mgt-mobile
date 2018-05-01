@@ -4,14 +4,33 @@ import {Card, CardSection, Button, Input} from './common';
 import {emailChanged, passwordChanged} from '../components/actions';
 
 class LoginForm extends Component {
+	onEmailChange(text) {
+		this.props.emailChanged(text);
+	}
+
+	onPasswordChange(text) {
+		this.props.passwordChanged(text);
+	}
+
 	render() {
 		return (
 			<Card>
 				<CardSection>
-					<Input label="Email" placeholder="email@gmail.com"/>
+					<Input
+						label="Email"
+						placeholder="email@gmail.com"
+						onChangeText={this.onEmailChange.bind(this)}
+						value={this.props.email}
+					/>
 				</CardSection>
 				<CardSection>
-					<Input label="Password" placeholder="password" secureTextEntry/>
+					<Input
+						label="Password"
+						placeholder="password"
+						secureTextEntry
+						onChangeText={this.onPasswordChange.bind(this)}
+						value={this.props.password}
+					/>
 				</CardSection>
 				<CardSection>
 					<Button>Login</Button>
