@@ -21,7 +21,11 @@ export const passwordChanged = text => {
 		payload: text
 	};
 };
-
+/**
+ * * Logic for when user logs in successfully
+ * @param {function} dispatch Manually dispatch request
+ * @param {string} data Data to send as part of state
+ */
 const loginUserSuccess = (dispatch, data) => {
 	dispatch({
 		type: LOGIN_USER_SUCCESS,
@@ -29,7 +33,10 @@ const loginUserSuccess = (dispatch, data) => {
 	});
 	Actions.facilityList();
 };
-
+/**
+ * * Logic for when user log in fails
+ * @param {function} dispatch Manually dispatch request
+ */
 const loginUserFail = dispatch => {
 	dispatch({
 		type: LOGIN_USER_FAIL
@@ -40,7 +47,7 @@ const loginUserFail = dispatch => {
  * * Attempts to login a user
  * @param {email} Email Required to log user in
  * @param {password} Password Required to log user in
- * @returns{null} Null
+ * @returns{function} Manual handling of async requests
  */
 export const loginUser = ({email, password}) => {
 	return dispatch => {
