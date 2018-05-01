@@ -1,4 +1,10 @@
-import {EMAIL_CHANGED, PASSWORD_CHANGED, LOGIN_USER_SUCCESS} from './types';
+import {
+	EMAIL_CHANGED,
+	PASSWORD_CHANGED,
+	LOGIN_USER_SUCCESS,
+	LOGIN_USER,
+	LOGIN_USER_FAIL
+} from './types';
 import axios from 'axios';
 
 export const emailChanged = text => {
@@ -17,13 +23,21 @@ export const passwordChanged = text => {
 
 export const loginUser = ({email, password}) => {
 	return dispatch => {
+		dispatch({
+			type: LOGIN_USER
+		});
 		// TODO Fetch User From API
 		console.log('email and password: ' + email + ' ' + password);
 		// TODO Use dispatch in 'then' of axios.post
 		// TODO axios.post('url').then((user) => {FILL DISPATCH HERE})
 		// TODO dispatch(type: LOGIN_USER_SUCCESS, payload: user)
-		axios.get('https://api.jikan.me/anime/1').then(data => {
-			dispatch({type: LOGIN_USER_SUCCESS, payload: data});
-		});
+		axios
+			.get('https://api.jikan.me/anime/1')
+			.then(data => {
+				dispatch({type: LOGIN_USER_SUCCESS, payload: data});
+			})
+			.catch(() => {
+				dispatch({type: LOGIN_USER_FAIL});
+			});
 	};
 };
