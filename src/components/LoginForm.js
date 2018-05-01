@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {Card, CardSection, Button, Input} from './common';
 
 class LoginForm extends Component {
