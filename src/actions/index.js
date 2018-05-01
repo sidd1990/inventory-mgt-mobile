@@ -1,3 +1,4 @@
+import {Actions} from 'react-native-router-flux';
 import {
 	EMAIL_CHANGED,
 	PASSWORD_CHANGED,
@@ -35,6 +36,7 @@ export const loginUser = ({email, password}) => {
 			.get('https://api.jikan.me/anime/1')
 			.then(data => {
 				dispatch({type: LOGIN_USER_SUCCESS, payload: data});
+				Actions.facilitiesList();
 			})
 			.catch(() => {
 				dispatch({type: LOGIN_USER_FAIL});
