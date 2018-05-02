@@ -1,3 +1,7 @@
 {
-	"extends": ["xo", "xo-react"]
+	"extends": ["xo", "xo-react"],
+	"rules": {
+		"react/prop-types": 0,
+		"react/jsx-no-bind": 0
+	}
 }
