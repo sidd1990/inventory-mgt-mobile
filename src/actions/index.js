@@ -31,7 +31,7 @@ const loginUserSuccess = (dispatch, data) => {
 		type: LOGIN_USER_SUCCESS,
 		payload: data
 	});
-	Actions.facilityList();
+	Actions.main();
 };
 /**
  * * Logic for when user log in fails
