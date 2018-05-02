@@ -20,6 +20,10 @@ export const facilitiesFetch = ({uid}) => {
 			)
 			.then(data => {
 				fetchDataSuccess(dispatch, JSON.parse(data));
+			})
+			.catch(error => {
+				console.log('Error in fetching: ' + error);
+				fetchDataFail(dispatch);
 			});
 	};
 };
