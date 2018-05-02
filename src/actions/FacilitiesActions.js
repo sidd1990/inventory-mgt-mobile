@@ -19,7 +19,7 @@ export const facilitiesFetch = ({uid}) => {
 				`http://ims-5320.us-east-2.elasticbeanstalk.com/api/values/GetUserFacilitiesByUserId/${uid}`
 			)
 			.then(data => {
-				fetchDataSuccess(dispatch, JSON.parse(data));
+				fetchDataSuccess(dispatch, JSON.parse(data.data));
 			})
 			.catch(error => {
 				console.log('Error in fetching: ' + error);
