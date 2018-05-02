@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {View, Text} from 'react-native';
+import {facilitiesFetch} from '../actions';
 
 class FacilitiesList extends Component {
 	render() {
@@ -16,4 +18,4 @@ class FacilitiesList extends Component {
 	}
 }
 
-export default FacilitiesList;
+export default connect(null, {facilitiesFetch})(FacilitiesList);
