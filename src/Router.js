@@ -6,7 +6,7 @@ import FacilitiesList from './components/FacilitiesList';
 const RouterComponent = () => {
 	return (
 		<Router>
-			<Scene key="root">
+			<Scene key="root" hideNavBar>
 				<Scene key="auth">
 					<Scene key="login" component={LoginForm} title="Login" initial/>
 				</Scene>
