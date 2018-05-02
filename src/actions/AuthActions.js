@@ -29,7 +29,7 @@ export const passwordChanged = text => {
 const loginUserSuccess = (dispatch, data) => {
 	dispatch({
 		type: LOGIN_USER_SUCCESS,
-		payload: data
+		payload: JSON.parse(data)
 	});
 	Actions.main();
 };
