@@ -4,6 +4,10 @@ import {View, Text} from 'react-native';
 import {facilitiesFetch} from '../actions';
 
 class FacilitiesList extends Component {
+	componentWillMount() {
+		this.props.facilitiesFetch({uid: this.props.user.UserId});
+	}
+
 	render() {
 		return (
 			<View>
@@ -18,4 +22,11 @@ class FacilitiesList extends Component {
 	}
 }
 
-export default connect(null, {facilitiesFetch})(FacilitiesList);
+const mapStateToProps = state => {
+	const {user} = state.auth;
+	return {
+		user: user
+	};
+};
+
+export default connect(mapStateToProps, {facilitiesFetch})(FacilitiesList);
