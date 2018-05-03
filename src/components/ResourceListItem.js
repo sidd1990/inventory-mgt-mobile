@@ -2,6 +2,12 @@ import React, {Component} from 'react';
 import {View, TouchableWithoutFeedback, Text} from 'react-native';
 import {CardSection} from './common';
 
+const styles = {
+	titleStyle: {
+		paddingLeft: 15,
+		fontSize: 18
+	}
+};
 class ResourceListItem extends Component {
 	render() {
 		const {Name} = this.props.resource;
