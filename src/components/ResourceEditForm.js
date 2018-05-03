@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Button, Card, CardSection, Input, Header} from './common';
-import {quantityChanged} from '../actions';
+import {
+	quantityChanged,
+	markAsMissing,
+	confirmQuantity,
+	updateQuantity
+} from '../actions';
 
 class ResourceEditForm extends Component {
 	render() {
