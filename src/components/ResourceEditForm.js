@@ -60,4 +60,9 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps, {quantityChanged})(ResourceEditForm);
+export default connect(mapStateToProps, {
+	quantityChanged,
+	confirmQuantity,
+	markAsMissing,
+	updateQuantity
+})(ResourceEditForm);
