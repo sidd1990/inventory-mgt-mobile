@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Text} from 'react-native';
-import {Button, Card, CardSection, Input} from './common';
+import {Button, Card, CardSection, Input, Header} from './common';
+import {quantityChanged} from '../actions';
 
 class ResourceEditForm extends Component {
 	render() {
 		return (
 			<Card>
-				<CardSection>
-					<Text>{this.props.resource.Name}</Text>
-				</CardSection>
+				<Header headerText={this.props.resource.Name}/>
 				<CardSection>
 					<Input
 						label="Quantity"
