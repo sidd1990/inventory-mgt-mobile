@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Text} from 'react-native';
+import {View, TouchableWithoutFeedback, Text} from 'react-native';
+import {Actions} from 'react-native-router-flux';
 import {CardSection} from './common';
 
 const styles = {
@@ -10,12 +11,20 @@ const styles = {
 };
 
 class FacilityListItem extends Component {
+	onRowPress() {
+		Actions.resourceList({facility: this.props.facility});
+	}
+
 	render() {
 		const {Name} = this.props.facility;
 		return (
-			<CardSection>
-				<Text style={styles.titleStyle}>{Name}</Text>
-			</CardSection>
+			<TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
+				<View>
+					<CardSection>
+						<Text style={styles.titleStyle}>{Name}</Text>
+					</CardSection>
+				</View>
+			</TouchableWithoutFeedback>
 		);
 	}
 }
