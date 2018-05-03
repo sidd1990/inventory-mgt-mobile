@@ -22,11 +22,15 @@ const styles = {
 	}
 };
 
-const Button = ({onPress, children, disabled}) => {
+const Button = ({onPress, children, disabled, style}) => {
 	const {buttonStyle, textStyle} = styles;
 
 	return (
-		<TouchableOpacity onPress={onPress} style={buttonStyle} disabled={disabled}>
+		<TouchableOpacity
+			onPress={onPress}
+			style={[buttonStyle, style]}
+			disabled={disabled}
+		>
 			<Text style={textStyle}>{children}</Text>
 		</TouchableOpacity>
 	);
