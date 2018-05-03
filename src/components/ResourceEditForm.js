@@ -31,3 +31,10 @@ class ResourceEditForm extends Component {
 		);
 	}
 }
+
+const mapStateToProps = state => {
+	const {quantity} = state.resources;
+	return {
+		quantity
+	};
+};
