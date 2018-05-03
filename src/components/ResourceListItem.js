@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {View, TouchableWithoutFeedback, Text} from 'react-native';
+import {Actions} from 'react-native-router-flux';
 import {CardSection} from './common';
 
 const styles = {
