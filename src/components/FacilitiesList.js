@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {View, Text} from 'react-native';
+import {ListView, Text} from 'react-native';
 import {facilitiesFetch} from '../actions';
+import FacilityListItem from './FacilityListItem';
 
 class FacilitiesList extends Component {
 	componentWillMount() {
