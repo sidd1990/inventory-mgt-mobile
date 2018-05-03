@@ -4,9 +4,9 @@ const INITIAL_STATE = {facilities: [], error: ''};
 export default (state = INITIAL_STATE, action) => {
 	switch (action.type) {
 		case FACILITY_FETCH_SUCCESS:
-			return {...state, facilities: action.payload};
+			return {...INITIAL_STATE, facilities: action.payload};
 		case FACILITY_FETCH_FAIL:
-			return {...state, error: 'Unable to fetch facilities'};
+			return {...INITIAL_STATE, error: 'Unable to fetch facilities'};
 		default:
 			return state;
 	}
