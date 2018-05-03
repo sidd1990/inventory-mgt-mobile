@@ -6,7 +6,6 @@ const fetchDataSuccess = (dispatch, data) => {
 		let facility = {id: element.Facility.Id, name: element.Facility.Name};
 		facilityData.push(facility);
 	});
-	console.log(facilityData);
 	dispatch({
 		type: FACILITY_FETCH_SUCCESS,
 		payload: facilityData
