@@ -7,6 +7,18 @@ import FacilityListItem from './FacilityListItem';
 class FacilitiesList extends Component {
 	componentWillMount() {
 		this.props.facilitiesFetch({uid: this.props.user.UserId});
+		this.createDataSource(this.props);
+	}
+
+	componentWillReceiveProps(newProps) {
+		this.createDataSource(newProps);
+	}
+
+	createDataSource({facilities}) {
+		const ds = new ListView.DataSource({
+			rowHasChanged: (r1, r2) => r1 !== r2
+		});
+		this.dataSource = ds.cloneWithRows(facilities);
 	}
 
 	render() {
