@@ -27,7 +27,11 @@ class ResourceEditForm extends Component {
 	renderConfirm() {
 		if (this.props.resource.Verified) {
 			return (
-				<Button disabled onPress={this.onConfirmClick.bind(this)}>
+				<Button
+					disabled
+					style={{backgroundColor: '#DCDCDC'}}
+					onPress={this.onConfirmClick.bind(this)}
+				>
 					Confirm Quantity
 				</Button>
 			);
@@ -40,7 +44,11 @@ class ResourceEditForm extends Component {
 	renderUpdate() {
 		if (this.props.resource.Verified) {
 			return (
-				<Button disabled onPress={this.onUpdateClick.bind(this)}>
+				<Button
+					disabled
+					style={{backgroundColor: '#DCDCDC'}}
+					onPress={this.onUpdateClick.bind(this)}
+				>
 					Update Quantity
 				</Button>
 			);
@@ -53,7 +61,11 @@ class ResourceEditForm extends Component {
 	renderMarkMissing() {
 		if (this.props.resource.Verified) {
 			return (
-				<Button disabled onPress={this.onMarkClick.bind(this)}>
+				<Button
+					disabled
+					style={{backgroundColor: '#DCDCDC'}}
+					onPress={this.onMarkClick.bind(this)}
+				>
 					Mark as Missing
 				</Button>
 			);
