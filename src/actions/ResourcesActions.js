@@ -1,5 +1,9 @@
 import axios from 'axios';
-import {RESOURCE_FETCH_FAIL, RESOURCE_FETCH_SUCCESS} from './types';
+import {
+	RESOURCE_FETCH_FAIL,
+	RESOURCE_FETCH_SUCCESS,
+	QUANTITY_CHANGED
+} from './types';
 
 const fetchResourceSuccess = (dispatch, data) => {
 	dispatch({
