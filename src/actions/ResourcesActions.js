@@ -25,3 +25,10 @@ export const fetchResources = ({facilityId}) => {
 			});
 	};
 };
+
+export const quantityChanged = ({quantity}) => {
+	return {
+		type: QUANTITY_CHANGED,
+		payload: quantity
+	};
+};
