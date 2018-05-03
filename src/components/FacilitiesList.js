@@ -21,16 +21,17 @@ class FacilitiesList extends Component {
 		this.dataSource = ds.cloneWithRows(facilities);
 	}
 
+	renderRow(facility) {
+		return <FacilityListItem facility={facility}/>;
+	}
+
 	render() {
 		return (
-			<View>
-				<Text>Facility List</Text>
-				<Text>Facility List</Text>
-				<Text>Facility List</Text>
-				<Text>Facility List</Text>
-				<Text>Facility List</Text>
-				<Text>Facility List</Text>
-			</View>
+			<ListView
+				enableEmptySection
+				dataSource={this.dataSource}
+				renderRow={this.renderRow}
+			/>
 		);
 	}
 }
