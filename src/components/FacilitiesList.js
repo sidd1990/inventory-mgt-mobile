@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {ListView, Text} from 'react-native';
+import {ListView} from 'react-native';
 import {facilitiesFetch} from '../actions';
 import FacilityListItem from './FacilityListItem';
 
