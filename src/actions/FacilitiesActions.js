@@ -1,11 +1,16 @@
 import axios from 'axios';
 import {FACILITY_FETCH_FAIL, FACILITY_FETCH_SUCCESS} from '../actions/types';
 const fetchDataSuccess = (dispatch, data) => {
-	console.log(data);
-	// Dispatch({
-	// 	type: FACILITY_FETCH_SUCCESS,
-	// 	payload: data
-	// });
+	let facilityData = [];
+	data.forEach(element => {
+		let facility = {id: element.Facility.Id, name: element.Facility.Name};
+		facilityData.push(facility);
+	});
+	console.log(facilityData);
+	dispatch({
+		type: FACILITY_FETCH_SUCCESS,
+		payload: facilityData
+	});
 };
 const fetchDataFail = dispatch => {
 	dispatch({
