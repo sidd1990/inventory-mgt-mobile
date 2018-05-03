@@ -24,8 +24,10 @@ class FacilitiesList extends Component {
 
 const mapStateToProps = state => {
 	const {user} = state.auth;
+	const {facilities} = state.facilities;
 	return {
-		user: user
+		user: user,
+		facilities: facilities
 	};
 };
 
