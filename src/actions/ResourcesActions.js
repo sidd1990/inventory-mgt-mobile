@@ -11,7 +11,11 @@ const fetchResourceSuccess = (dispatch, data) => {
 		payload: data
 	});
 };
-
+/**
+ * * Attempts to fetch resources for a particular facility
+ * @param {Object} facilityId Id of facility
+ * @returns {Function} New async action
+ */
 export const fetchResources = ({facilityId}) => {
 	return dispatch => {
 		axios
@@ -36,7 +40,11 @@ export const quantityChanged = ({quantity}) => {
 		payload: quantity
 	};
 };
-
+/**
+ * * Verifies quantity of resource
+ * @param {Object} param0 Resource id
+ * @returns {Function} New async action
+ */
 export const confirmQuantity = ({resourceId}) => {
 	return dispatch => {
 		// Make axios post command here
@@ -45,6 +53,11 @@ export const confirmQuantity = ({resourceId}) => {
 	};
 };
 
+/**
+ * * Attempts to update quantity with specified quantity
+ * @param {Object} param0 Object containing resourceId and quantity
+ * @returns {Function} New async action
+ */
 export const updateQuantity = ({resourceId, quantity}) => {
 	return dispatch => {
 		// Make axios post command here
@@ -52,7 +65,11 @@ export const updateQuantity = ({resourceId, quantity}) => {
 		console.log(resourceId);
 	};
 };
-
+/**
+ * * Attempts to set mark as missing for resource
+ * @param {Object} param0 Object containing resource id
+ * @returns {Function} New async action
+ */
 export const markAsMissing = ({resourceId}) => {
 	return dispatch => {
 		// Make axios post command here
