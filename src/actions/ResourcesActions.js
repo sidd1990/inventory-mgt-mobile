@@ -41,13 +41,15 @@ export const confirmQuantity = ({resourceId}) => {
 	return dispatch => {
 		// Make axios post command here
 		console.log('CONFIRM QUANTITY CLICKED!');
+		console.log(resourceId);
 	};
 };
 
-export const updateQuantity = ({resourceId}) => {
+export const updateQuantity = ({resourceId, quantity}) => {
 	return dispatch => {
 		// Make axios post command here
 		console.log('UPDATE QUANTITY CLICKED!');
+		console.log(resourceId);
 	};
 };
 
@@ -55,5 +57,6 @@ export const markAsMissing = ({resourceId}) => {
 	return dispatch => {
 		// Make axios post command here
 		console.log('MARK AS MISSING CLICKED!');
+		console.log(resourceId);
 	};
 };
