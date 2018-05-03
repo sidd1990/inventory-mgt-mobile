@@ -36,3 +36,24 @@ export const quantityChanged = ({quantity}) => {
 		payload: quantity
 	};
 };
+
+export const confirmQuantity = ({resourceId}) => {
+	return dispatch => {
+		// Make axios post command here
+		console.log('CONFIRM QUANTITY CLICKED!');
+	};
+};
+
+export const updateQuantity = ({resourceId}) => {
+	return dispatch => {
+		// Make axios post command here
+		console.log('UPDATE QUANTITY CLICKED!');
+	};
+};
+
+export const markAsMissing = ({resourceId}) => {
+	return dispatch => {
+		// Make axios post command here
+		console.log('MARK AS MISSING CLICKED!');
+	};
+};
