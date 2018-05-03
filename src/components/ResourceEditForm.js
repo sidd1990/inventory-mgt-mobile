@@ -12,8 +12,10 @@ class ResourceEditForm extends Component {
 					<Input
 						label="Quantity"
 						placeholder="10"
-						value={this.props.resource.Quantity}
-						onChangeText={() => {}}
+						value={String(this.props.quantity)}
+						onChangeText={text => {
+							this.props.quantityChanged(text);
+						}}
 					/>
 				</CardSection>
 				<CardSection>
@@ -36,3 +38,5 @@ const mapStateToProps = state => {
 		quantity
 	};
 };
+
+export default connect(mapStateToProps, {quantityChanged})(ResourceEditForm);
