@@ -10,6 +10,10 @@ const styles = {
 	}
 };
 class ResourceListItem extends Component {
+	onRowRender() {
+		Actions.showResource({resource: this.props.resource});
+	}
+
 	render() {
 		const {Name} = this.props.resource;
 		return (
