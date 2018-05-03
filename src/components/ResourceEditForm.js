@@ -14,7 +14,10 @@ class ResourceEditForm extends Component {
 	}
 
 	onUpdateClick() {
-		this.props.updateQuantity({resourceId: this.props.resource.Id});
+		this.props.updateQuantity({
+			resourceId: this.props.resource.Id,
+			quantity: Number(this.props.quantity)
+		});
 	}
 
 	onMarkClick() {
