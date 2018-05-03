@@ -11,7 +11,7 @@ const styles = {
 
 class FacilityListItem extends Component {
 	render() {
-		const {name} = this.props.facilities;
+		const {name} = this.props.facility;
 		return (
 			<CardSection>
 				<Text style={styles.titleStyle}>{name}</Text>
