@@ -6,7 +6,7 @@ import FacilityListItem from './FacilityListItem';
 
 class FacilitiesList extends Component {
 	componentWillMount() {
-		this.props.facilitiesFetch({uid: this.props.user.UserId});
+		this.props.facilitiesFetch({uid: this.props.user.userid});
 		this.createDataSource(this.props);
 	}
 

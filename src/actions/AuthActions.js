@@ -29,7 +29,7 @@ export const passwordChanged = text => {
 const loginUserSuccess = (dispatch, data) => {
 	dispatch({
 		type: LOGIN_USER_SUCCESS,
-		payload: JSON.parse(data)
+		payload: data
 	});
 	Actions.main();
 };
@@ -55,10 +55,13 @@ export const loginUser = ({email, password}) => {
 			type: LOGIN_USER
 		});
 		axios
-			.post('http://ims-5320.us-east-2.elasticbeanstalk.com/api/values/Login', {
-				Username: email,
-				Password: password
-			})
+			.post(
+				'https://pu65y7gbt8.execute-api.us-east-1.amazonaws.com/dev/users/login',
+				{
+					username: email,
+					password: password
+				}
+			)
 			.then(data => {
 				loginUserSuccess(dispatch, data.data);
 			})

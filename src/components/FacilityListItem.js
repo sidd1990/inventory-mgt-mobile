@@ -11,10 +11,10 @@ const styles = {
 
 class FacilityListItem extends Component {
 	render() {
-		const {name} = this.props.facility;
+		const {Name} = this.props.facility;
 		return (
 			<CardSection>
-				<Text style={styles.titleStyle}>{name}</Text>
+				<Text style={styles.titleStyle}>{Name}</Text>
 			</CardSection>
 		);
 	}
