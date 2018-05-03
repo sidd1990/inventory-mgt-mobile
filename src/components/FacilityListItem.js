@@ -9,8 +9,13 @@ const styles = {
 		fontSize: 18
 	}
 };
-
+/**
+ * Class component to render a single facility on screen
+ */
 class FacilityListItem extends Component {
+	/**
+	 * Switches scenes on press
+	 */
 	onRowPress() {
 		Actions.resourceList({facility: this.props.facility});
 	}
