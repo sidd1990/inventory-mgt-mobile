@@ -5,3 +5,5 @@ export const LOGIN_USER_FAIL = 'login_user_fail';
 export const LOGIN_USER = 'login_user';
 export const FACILITY_FETCH_FAIL = 'facility_fetch_fail';
 export const FACILITY_FETCH_SUCCESS = 'facility_fetch_success';
+export const RESOURCE_FETCH_SUCCESS = 'resource_fetch_success';
+export const RESOURCE_FETCH_FAIL = 'resource_fetch_fail';
