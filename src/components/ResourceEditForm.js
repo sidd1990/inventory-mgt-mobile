@@ -9,6 +9,18 @@ import {
 } from '../actions';
 
 class ResourceEditForm extends Component {
+	onConfirmClick() {
+		this.props.confirmQuantity({resourceId: this.props.resource.Id});
+	}
+
+	onUpdateClick() {
+		this.props.updateQuantity({resourceId: this.props.resource.Id});
+	}
+
+	onMarkClick() {
+		this.props.markAsMissing({resourceId: this.props.resource.Id});
+	}
+
 	render() {
 		return (
 			<Card>
@@ -24,13 +36,17 @@ class ResourceEditForm extends Component {
 					/>
 				</CardSection>
 				<CardSection>
-					<Button>Confirm Quantity</Button>
+					<Button onPress={this.onConfirmClick.bind(this)}>
+						Confirm Quantity
+					</Button>
 				</CardSection>
 				<CardSection>
-					<Button>Update Quantity</Button>
+					<Button onPress={this.onUpdateClick.bind(this)}>
+						Update Quantity
+					</Button>
 				</CardSection>
 				<CardSection>
-					<Button>Mark as Missing</Button>
+					<Button onPress={this.onMarkClick.bind(this)}>Mark as Missing</Button>
 				</CardSection>
 			</Card>
 		);
