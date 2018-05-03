@@ -17,7 +17,7 @@ class ResourceListItem extends Component {
 	render() {
 		const {Name} = this.props.resource;
 		return (
-			<TouchableWithoutFeedback onPress={this.onRowRender}>
+			<TouchableWithoutFeedback onPress={this.onRowRender.bind(this)}>
 				<View>
 					<CardSection>
 						<Text style={styles.titleStyle}>{Name}</Text>
