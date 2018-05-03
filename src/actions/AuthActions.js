@@ -54,7 +54,6 @@ export const loginUser = ({email, password}) => {
 		dispatch({
 			type: LOGIN_USER
 		});
-		console.log('email and password: ' + email + ' ' + password);
 		axios
 			.post('http://ims-5320.us-east-2.elasticbeanstalk.com/api/values/Login', {
 				Username: email,
