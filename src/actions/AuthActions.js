@@ -8,13 +8,22 @@ import {
 } from './types';
 import axios from 'axios';
 
+/**
+ * * Action to track change in email
+ * @param {String} text New incoming text
+ * @returns {Object} Action
+ */
 export const emailChanged = text => {
 	return {
 		type: EMAIL_CHANGED,
 		payload: text
 	};
 };
-
+/**
+ * * Action to track change in password field
+ * @param {String} text New incoming text
+ * @returns {Object} Action
+ */
 export const passwordChanged = text => {
 	return {
 		type: PASSWORD_CHANGED,
