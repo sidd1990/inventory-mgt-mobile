@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {ListView} from 'react-native';
 import {connect} from 'react-redux';
-import {resourcesFetch} from '../actions';
+import {fetchResources} from '../actions';
 import ResourceListItem from './ResourceListItem';
 
 class ResourceList extends Component {
@@ -13,7 +13,7 @@ class ResourceList extends Component {
 	}
 
 	componentWillMount() {
-		this.props.resourcesFetch({facilityId: this.props.facility.Id});
+		this.props.fetchResources({facilityId: this.props.facility.Id});
 		this.createDataSource(this.props);
 	}
 
@@ -43,4 +43,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps, {resourcesFetch})(ResourceList);
+export default connect(mapStateToProps, {fetchResources})(ResourceList);
