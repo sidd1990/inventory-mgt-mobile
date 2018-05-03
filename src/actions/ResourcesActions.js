@@ -15,7 +15,7 @@ export const fetchResources = ({facilityId}) => {
 				`https://pu65y7gbt8.execute-api.us-east-1.amazonaws.com/dev/get/resourceverify/facilityid/${facilityId}`
 			)
 			.then(data => {
-				fetchResourceSuccess(dispatch, data);
+				fetchResourceSuccess(dispatch, data.data);
 			})
 			.catch(error => {
 				console.log('Error fetching resource: ' + error);
