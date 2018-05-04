@@ -61,7 +61,12 @@ export const confirmQuantity = ({resourceId}) => {
 		console.log(resourceId);
 	};
 };
-
+const updateQuantitySuccess = (dispatch, data) => {
+	dispatch({
+		type: UPDATE_RESOURCE_QUANTITY,
+		data: data
+	});
+};
 /**
  * * Attempts to update quantity with specified quantity
  * @param {Object} param0 Object containing resourceId and quantity
