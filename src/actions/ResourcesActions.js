@@ -43,6 +43,12 @@ export const quantityChanged = ({quantity}) => {
 		payload: quantity
 	};
 };
+const confirmQuantitySuccess = (dispatch, data) => {
+	dispatch({
+		type: CONFIRM_RESOURCE_QUANTITY,
+		data: data
+	});
+};
 /**
  * * Verifies quantity of resource
  * @param {Object} param0 Resource id
