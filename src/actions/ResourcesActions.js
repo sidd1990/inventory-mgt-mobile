@@ -2,7 +2,10 @@ import axios from 'axios';
 import {
 	RESOURCE_FETCH_FAIL,
 	RESOURCE_FETCH_SUCCESS,
-	QUANTITY_CHANGED
+	QUANTITY_CHANGED,
+	CONFIRM_RESOURCE_QUANTITY,
+	MARK_RESOURCE_MISSING,
+	UPDATE_RESOURCE_QUANTITY
 } from './types';
 
 const fetchResourceSuccess = (dispatch, data) => {
