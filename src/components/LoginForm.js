@@ -11,6 +11,9 @@ const styles = {
 		color: 'red'
 	}
 };
+/**
+ * Class component to render the Login Form
+ */
 class LoginForm extends Component {
 	onEmailChange(text) {
 		this.props.emailChanged(text);
@@ -25,6 +28,10 @@ class LoginForm extends Component {
 		this.props.loginUser({email, password});
 	}
 
+	/**
+	 * Render a spinner if fetching data else the login button
+	 * @returns {Component} Either Spinner or Button
+	 */
 	renderButton() {
 		if (this.props.loading) {
 			return <Spinner size="large"/>;
@@ -42,6 +49,10 @@ class LoginForm extends Component {
 		}
 	}
 
+	/**
+	 * Render the form
+	 * @returns {Component} The login form component
+	 */
 	render() {
 		return (
 			<Card>
