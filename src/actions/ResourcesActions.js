@@ -79,6 +79,12 @@ export const updateQuantity = ({resourceId, quantity}) => {
 		console.log(resourceId);
 	};
 };
+const markMissingSuccess = (dispatch, data) => {
+	dispatch({
+		type: MARK_RESOURCE_MISSING,
+		data: data
+	});
+};
 /**
  * * Attempts to set mark as missing for resource
  * @param {Object} param0 Object containing resource id
