@@ -1,5 +1,5 @@
 import React from 'react';
-import {Scene, Router} from 'react-native-router-flux';
+import {Scene, Router, Actions} from 'react-native-router-flux';
 import LoginForm from './components/LoginForm';
 import FacilitiesList from './components/FacilitiesList';
 import ResourcesList from './components/ResourcesList';
@@ -15,8 +15,13 @@ const RouterComponent = () => {
 				<Scene key="main">
 					<Scene
 						key="facilityList"
+						leftTitle="Logout"
+						onLeft={() => {
+							Actions.pop();
+						}}
 						component={FacilitiesList}
 						title="Facilities"
+						initial
 					/>
 					<Scene
 						key="resourceList"
