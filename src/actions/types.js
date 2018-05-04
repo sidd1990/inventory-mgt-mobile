@@ -11,3 +11,6 @@ export const FACILITY_FETCH_SUCCESS = 'facility_fetch_success';
 export const RESOURCE_FETCH_SUCCESS = 'resource_fetch_success';
 export const RESOURCE_FETCH_FAIL = 'resource_fetch_fail';
 export const QUANTITY_CHANGED = 'quantity_changed';
+export const UPDATE_RESOURCE_QUANTITY = 'update_resource_quantity';
+export const CONFIRM_RESOURCE_QUANTITY = 'confirm_resource_quantity';
+export const MARK_RESOURCE_MISSING = 'mark_resource_missing';
